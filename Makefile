@@ -6,7 +6,7 @@
 #    By: wharinas <wharinas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 16:27:36 by wharinas          #+#    #+#              #
-#    Updated: 2022/05/10 02:32:26 by wharinas         ###   ########.fr        #
+#    Updated: 2022/05/10 03:28:26 by wharinas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ TEST_PATH    = ./test
 
 SOURCES = $(wildcard $(SOURCES_PATH)/*.c)
 OBJECTS = $(patsubst $(SOURCES_PATH)/%.c, $(OBJECTS_PATH)/%.o, $(SOURCES))
-HEADERS = $(wildcard $(HEADER_PATH)/*.h)
+HEADERS = $(wildcard $(HEADERS_PATH)/*.h)
 
 ##################
 # CONFIG - COMMAND
@@ -40,13 +40,15 @@ REMOVE            = rm -f
 # COMPILER
 ##########
 
-all: $(NAME)
+all: msg_start $(NAME)
 
 $(NAME) : $(HEADERS) $(OBJECTS)
+	@echo "# MAKE .h FILE: "
 	$(ARCHIVE_AND_INDEX) $(NAME) $(OBJECTS)
 
 $(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/%.c
-	$(CC_STRICT) -I $(HEADERS_PATH) -o $@ -c $<
+	@echo "# MAKE OBJ FILE: $< >> $@ "
+	$(CC_STRICT) -c $< -o $@
 
 ##########
 # CLEAN
@@ -69,5 +71,13 @@ re: fclean all
 test: 
 	@$(MAKE_EXTERNAL) $(TEST_PATH)
 
+###########
+# DEBUG MSG
+###########
+
+msg_start:
+	@echo "################"
+	@echo "# LIBFT MAKEFILE"
+	@echo "################"
 
 .PHONY: all clean fclean re test

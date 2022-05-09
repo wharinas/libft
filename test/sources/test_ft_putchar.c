@@ -6,7 +6,7 @@
 /*   By: wharinas <wharinas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 02:50:54 by wharinas          #+#    #+#             */
-/*   Updated: 2022/05/10 01:11:09 by wharinas         ###   ########.fr       */
+/*   Updated: 2022/05/10 03:34:33 by wharinas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	test_ft_putchar(void)
 {
-	printf("call function test_ft_putchar \n");
+	printf("TEST FT_PUTCHAR: \n");
+	ft_putchar('a', 1);
+	ft_putchar('1', 1);
+	printf("\n\n");
 }

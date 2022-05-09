@@ -6,7 +6,7 @@
 #    By: wharinas <wharinas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 02:41:42 by wharinas          #+#    #+#              #
-#    Updated: 2022/05/10 01:35:14 by wharinas         ###   ########.fr        #
+#    Updated: 2022/05/10 03:29:16 by wharinas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,20 +31,22 @@ HEADERS = $(wildcard $(HEADER_PATH)/*.h)
 CC                = gcc
 CC_FLAG           = -Wall -Wextra -Werror
 CC_STRICT         = $(CC) $(CC_FLAG)
+CC_INCLUDES       = -I $(HEADERS_PATH) -I $(LIBFT_INCLUDES)
 ARCHIVE_AND_INDEX = ar -rcs
-REMOVE            =  rm -f
+REMOVE            = rm -f
+MAKE_EXTERNAL     = make -C
 
 ##########
 # COMPILE
 ##########
 
-all: test
+all: msg_start test
 
 $(NAME): $(HEADER) $(OBJECTS)
 	@$(ARCHIVE_AND_INDEX) $(NAME) $(OBJECTS)
 
 $(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/%.c
-	@$(CC_STRICT) -I $(HEADERS_PATH) -o $@ -c $< 
+	@$(CC_STRICT) $(CC_INCLUDES) -o $@ -c $< 
 
 ########
 # CLEAN
@@ -54,7 +56,7 @@ clean:
 	@$(REMOVE) $(OBJECTS)
 
 fclean: clean
-	@$(REMOVE) $(NAME) a.out
+	@$(REMOVE) $(NAME) $(TEST_EXCUTE_NAME)
 
 re: fclean all
 
@@ -63,11 +65,32 @@ re: fclean all
 ##############
 
 TEST_FILE = main.c
-TEST_EXCUTE = ./a.out
+TEST_EXCUTE_NAME = a.out
+TEST_EXCUTE = ./$(TEST_EXCUTE_NAME)
 
-test: $(NAME)
-	@$(CC_STRICT) -I $(HEADERS_PATH) $(TEST_FILE) $(NAME)
+test: build_libft $(NAME)
+	$(CC_STRICT) $(CC_INCLUDES) $(TEST_FILE) $(NAME) $(LIBFT)
 	@$(TEST_EXCUTE)
+
+########
+# LIBFT
+######## 
+
+LIBFT_PATH = ..
+LIBFT_INCLUDES = $(LIBFT_PATH)/includes
+LIBFT = $(LIBFT_PATH)/libft.a
+
+build_libft:
+	$(MAKE_EXTERNAL) $(LIBFT_PATH)
+
+###############
+# DEBUG MESSAGE
+###############
+
+msg_start:
+	@echo "################"
+	@echo "# TEST MAKEFILE "
+	@echo "################"
 
 
 .PHONY: all clean fclean re test

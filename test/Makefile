@@ -6,7 +6,7 @@
 #    By: wharinas <wharinas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 02:41:42 by wharinas          #+#    #+#              #
-#    Updated: 2022/05/10 03:29:16 by wharinas         ###   ########.fr        #
+#    Updated: 2022/05/12 01:14:30 by wharinas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ OBJECTS_PATH = ./objects
 
 SOURCES = $(wildcard $(SOURCES_PATH)/*.c)
 OBJECTS = $(patsubst $(SOURCES_PATH)/%.c, $(OBJECTS_PATH)/%.o, $(SOURCES))
-HEADERS = $(wildcard $(HEADER_PATH)/*.h)
+# HEADERS = $(wildcard $(HEADER_PATH)/*.h)
+HEADERS = $(HEADER_PATH)/test.h
 
 ##################
 # CONFIG - COMMAND
@@ -80,7 +81,7 @@ LIBFT_PATH = ..
 LIBFT_INCLUDES = $(LIBFT_PATH)/includes
 LIBFT = $(LIBFT_PATH)/libft.a
 
-build_libft:
+build_libft: msg_buildlibft
 	$(MAKE_EXTERNAL) $(LIBFT_PATH)
 
 ###############
@@ -91,6 +92,11 @@ msg_start:
 	@echo "################"
 	@echo "# TEST MAKEFILE "
 	@echo "################"
+
+msg_buildlibft:
+	@echo "#####################"
+	@echo "# TEST: BUILD LIBFT "
+	@echo "#####################"
 
 
 .PHONY: all clean fclean re test

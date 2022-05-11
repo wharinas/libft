@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/wharinas/cadet/libft'
+echo "################"
+echo "# LIBFT MAKEFILE"
+echo "################"
+echo "# MAKE OBJ FILE: sources/ft_putchar.c >> objects/ft_putchar.o "
+gcc -Wall -Wextra -Werror -c sources/ft_putchar.c -o objects/ft_putchar.o
+echo "# MAKE OBJ FILE: sources/ft_isdigit.c >> objects/ft_isdigit.o "
+gcc -Wall -Wextra -Werror -c sources/ft_isdigit.c -o objects/ft_isdigit.o
+echo "# MAKE .h FILE: "
+ar -rcs libft.a  ./objects/ft_putchar.o  ./objects/ft_isdigit.o
+make: Leaving directory '/home/wharinas/cadet/libft'
+ 

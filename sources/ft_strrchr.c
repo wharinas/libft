@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wharinas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 19:00:08 by wharinas          #+#    #+#             */
-/*   Updated: 2022/02/15 19:01:32 by wharinas         ###   ########.fr       */
+/*   Created: 2022/02/16 18:15:08 by wharinas          #+#    #+#             */
+/*   Updated: 2022/02/23 22:47:41 by wharinas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= '0' && c <= '9');
+	int		i;
+	char	*ptr;
+
+	i = -1;
+	ptr = 0;
+	c %= 256;
+	while (s[++i])
+		if (s[i] == c)
+			ptr = (char *)(s + i);
+	if (s[i] == c)
+		ptr = (char *)(s + i);
+	return (ptr);
 }

@@ -1,13 +1,77 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/wharinas/cadet/libft'
-echo "################"
-echo "# LIBFT MAKEFILE"
-echo "################"
-echo "# MAKE OBJ FILE: sources/ft_putchar.c >> objects/ft_putchar.o "
-gcc -Wall -Wextra -Werror -c sources/ft_putchar.c -o objects/ft_putchar.o
-echo "# MAKE OBJ FILE: sources/ft_isdigit.c >> objects/ft_isdigit.o "
-gcc -Wall -Wextra -Werror -c sources/ft_isdigit.c -o objects/ft_isdigit.o
-echo "# MAKE .h FILE: "
-ar -rcs libft.a  ./objects/ft_putchar.o  ./objects/ft_isdigit.o
-make: Leaving directory '/home/wharinas/cadet/libft'
+make: Entering directory '/home/wharinas/cadet/libft/_libft'
+echo "#############################"
+echo "# LIBFT Makefile: Mandatory #"
+echo "#############################"
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_toupper.c >> objects/mandatory/ft_toupper.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_toupper.c -o objects/mandatory/ft_toupper.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_putchar_fd.c >> objects/mandatory/ft_putchar_fd.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_putchar_fd.c -o objects/mandatory/ft_putchar_fd.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_isalnum.c >> objects/mandatory/ft_isalnum.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_isalnum.c -o objects/mandatory/ft_isalnum.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_substr.c >> objects/mandatory/ft_substr.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_substr.c -o objects/mandatory/ft_substr.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strlcpy.c >> objects/mandatory/ft_strlcpy.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strlcpy.c -o objects/mandatory/ft_strlcpy.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_memset.c >> objects/mandatory/ft_memset.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_memset.c -o objects/mandatory/ft_memset.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_calloc.c >> objects/mandatory/ft_calloc.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_calloc.c -o objects/mandatory/ft_calloc.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strmapi.c >> objects/mandatory/ft_strmapi.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strmapi.c -o objects/mandatory/ft_strmapi.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_putendl_fd.c >> objects/mandatory/ft_putendl_fd.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_putendl_fd.c -o objects/mandatory/ft_putendl_fd.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strlcat.c >> objects/mandatory/ft_strlcat.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strlcat.c -o objects/mandatory/ft_strlcat.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strchr.c >> objects/mandatory/ft_strchr.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strchr.c -o objects/mandatory/ft_strchr.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_memmove.c >> objects/mandatory/ft_memmove.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_memmove.c -o objects/mandatory/ft_memmove.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_striteri.c >> objects/mandatory/ft_striteri.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_striteri.c -o objects/mandatory/ft_striteri.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_putnbr_fd.c >> objects/mandatory/ft_putnbr_fd.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_putnbr_fd.c -o objects/mandatory/ft_putnbr_fd.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strdup.c >> objects/mandatory/ft_strdup.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strdup.c -o objects/mandatory/ft_strdup.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strjoin.c >> objects/mandatory/ft_strjoin.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strjoin.c -o objects/mandatory/ft_strjoin.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_isdigit.c >> objects/mandatory/ft_isdigit.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_isdigit.c -o objects/mandatory/ft_isdigit.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strnstr.c >> objects/mandatory/ft_strnstr.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strnstr.c -o objects/mandatory/ft_strnstr.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_split.c >> objects/mandatory/ft_split.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_split.c -o objects/mandatory/ft_split.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strlen.c >> objects/mandatory/ft_strlen.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strlen.c -o objects/mandatory/ft_strlen.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_memcmp.c >> objects/mandatory/ft_memcmp.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_memcmp.c -o objects/mandatory/ft_memcmp.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strrchr.c >> objects/mandatory/ft_strrchr.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strrchr.c -o objects/mandatory/ft_strrchr.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_putstr_fd.c >> objects/mandatory/ft_putstr_fd.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_putstr_fd.c -o objects/mandatory/ft_putstr_fd.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_itoa.c >> objects/mandatory/ft_itoa.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_itoa.c -o objects/mandatory/ft_itoa.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_memcpy.c >> objects/mandatory/ft_memcpy.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_memcpy.c -o objects/mandatory/ft_memcpy.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_isalpha.c >> objects/mandatory/ft_isalpha.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_isalpha.c -o objects/mandatory/ft_isalpha.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strtrim.c >> objects/mandatory/ft_strtrim.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strtrim.c -o objects/mandatory/ft_strtrim.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_memchr.c >> objects/mandatory/ft_memchr.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_memchr.c -o objects/mandatory/ft_memchr.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_isascii.c >> objects/mandatory/ft_isascii.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_isascii.c -o objects/mandatory/ft_isascii.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_tolower.c >> objects/mandatory/ft_tolower.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_tolower.c -o objects/mandatory/ft_tolower.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_isprint.c >> objects/mandatory/ft_isprint.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_isprint.c -o objects/mandatory/ft_isprint.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_strncmp.c >> objects/mandatory/ft_strncmp.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_strncmp.c -o objects/mandatory/ft_strncmp.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_bzero.c >> objects/mandatory/ft_bzero.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_bzero.c -o objects/mandatory/ft_bzero.o
+echo " - MAKE OBJ (MANDATORY) FILE: sources/mandatory/ft_atoi.c >> objects/mandatory/ft_atoi.o "
+gcc -Wall -Wextra -Werror -I ./includes -c sources/mandatory/ft_atoi.c -o objects/mandatory/ft_atoi.o
+echo " - ARCHIVE AND INDEX: "libft.a  ./objects/mandatory/ft_putchar_fd.o  ./objects/mandatory/ft_strlcpy.o  ./objects/mandatory/ft_memset.o  ./objects/mandatory/ft_strlcat.o  ./objects/mandatory/ft_isdigit.o  ./objects/mandatory/ft_strlen.o  ./objects/mandatory/ft_memcmp.o  ./objects/mandatory/ft_striteri.o  ./objects/mandatory/ft_putstr_fd.o  ./objects/mandatory/ft_itoa.o  ./objects/mandatory/ft_memcpy.o  ./objects/mandatory/ft_isalpha.o  ./objects/mandatory/ft_strnstr.o  ./objects/mandatory/ft_isascii.o  ./objects/mandatory/ft_isprint.o  ./objects/mandatory/ft_putnbr_fd.o  ./objects/mandatory/ft_bzero.o  ./objects/mandatory/ft_toupper.o  ./objects/mandatory/ft_substr.o  ./objects/mandatory/ft_strmapi.o  ./objects/mandatory/ft_putendl_fd.o  ./objects/mandatory/ft_strchr.o  ./objects/mandatory/ft_memmove.o  ./objects/mandatory/ft_calloc.o  ./objects/mandatory/ft_strdup.o  ./objects/mandatory/ft_split.o  ./objects/mandatory/ft_strjoin.o  ./objects/mandatory/ft_strrchr.o  ./objects/mandatory/ft_isalnum.o  ./objects/mandatory/ft_strtrim.o  ./objects/mandatory/ft_memchr.o  ./objects/mandatory/ft_tolower.o  ./objects/mandatory/ft_strncmp.o  ./objects/mandatory/ft_atoi.o
+ar -rcs libft.a  ./objects/mandatory/ft_putchar_fd.o  ./objects/mandatory/ft_strlcpy.o  ./objects/mandatory/ft_memset.o  ./objects/mandatory/ft_strlcat.o  ./objects/mandatory/ft_isdigit.o  ./objects/mandatory/ft_strlen.o  ./objects/mandatory/ft_memcmp.o  ./objects/mandatory/ft_striteri.o  ./objects/mandatory/ft_putstr_fd.o  ./objects/mandatory/ft_itoa.o  ./objects/mandatory/ft_memcpy.o  ./objects/mandatory/ft_isalpha.o  ./objects/mandatory/ft_strnstr.o  ./objects/mandatory/ft_isascii.o  ./objects/mandatory/ft_isprint.o  ./objects/mandatory/ft_putnbr_fd.o  ./objects/mandatory/ft_bzero.o  ./objects/mandatory/ft_toupper.o  ./objects/mandatory/ft_substr.o  ./objects/mandatory/ft_strmapi.o  ./objects/mandatory/ft_putendl_fd.o  ./objects/mandatory/ft_strchr.o  ./objects/mandatory/ft_memmove.o  ./objects/mandatory/ft_calloc.o  ./objects/mandatory/ft_strdup.o  ./objects/mandatory/ft_split.o  ./objects/mandatory/ft_strjoin.o  ./objects/mandatory/ft_strrchr.o  ./objects/mandatory/ft_isalnum.o  ./objects/mandatory/ft_strtrim.o  ./objects/mandatory/ft_memchr.o  ./objects/mandatory/ft_tolower.o  ./objects/mandatory/ft_strncmp.o  ./objects/mandatory/ft_atoi.o
+make: Leaving directory '/home/wharinas/cadet/libft/_libft'
  
